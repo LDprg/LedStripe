@@ -1,0 +1,1 @@
+vsim -voptargs=+acc+tb work.tb
