@@ -5,9 +5,6 @@ library work;
 use work.types.all;
 
 entity top is
-	generic (
-		leds_g : natural := 300
-	);
 	port (
 		clk_100M_i : in  std_logic;
 		led_o      : out std_logic
@@ -15,11 +12,12 @@ entity top is
 end top;
 
 architecture rtl of top is
-	signal data_s : GRB_vector(leds_g downto 0);
+	constant leds_c : natural := 10;
+	signal data_s : GRB_vector(leds_c-1 downto 0) := (1 => (others => '1'),others => (others => '0'));
 begin
 	inst_LedStripe : entity work.LedStripe
 		generic map (
-			leds_g => leds_g
+			leds_g => leds_c
 		)
 		port map (
 			clk_100M_i => clk_100M_i,

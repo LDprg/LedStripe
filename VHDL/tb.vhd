@@ -8,7 +8,6 @@ architecture sim of tb is
 	signal clk_100M_s : std_logic := '0';
 	signal led_s  : std_logic := '0';
 
-	constant clk_freq  : integer := 100000000;
 	constant clk_per   : time    := 10 ns;
 begin
 	inst_uart_top : entity work.top

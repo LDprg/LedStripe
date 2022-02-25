@@ -10,17 +10,18 @@ entity LedSequence is
 		clk_100M_i : in  std_logic;
 		en_i       : in  std_logic;
 		data_i     : in  LedState;
+		idle_o     : out std_logic;
 		data_o     : out std_logic
 	);
 end LedSequence;
 
 architecture rtl of LedSequence is
-	signal state_s   : LedState := IDLE;
+	signal state_s   : LedState  := IDLE;
 	signal state_h_s : std_logic := '1';
 
 	signal timer_en_s : std_logic := '0';
 
-	signal count_s : unsigned(6 downto 0) := (others => '0');
+	signal count_s : unsigned(12 downto 0) := (others => '0');
 begin
 	p_clk : process (clk_100M_i)
 	begin
@@ -35,29 +36,23 @@ begin
 
 	p_state : process (en_i, clk_100M_i)
 	begin
-		if (en_i = '1') then
-			state_s <= data_i;
-		else
-			state_s <= IDLE;
-		end if;
-
-		if (rising_edge(clk_100M_i) and en_i = '1') then
+		if (rising_edge(clk_100M_i)) then
 			case(state_s) is
 				when '1' =>
 					timer_en_s <= '1';
 
 					if(state_h_s = '1') then
 						data_o <= '1';
-						if (count_s = 35) then
-							count_s   <= (others => '0');
-							state_h_s <= '0';
+						if (count_s = 90) then
+							timer_en_s <= '0';
+							state_h_s  <= '0';
 						end if;
 					else
 						data_o <= '0';
-						if (count_s = 90) then
-							count_s   <= (others => '0');
-							state_h_s <= '1';
-							state_s   <= IDLE;
+						if (count_s = 35) then
+							timer_en_s <= '0';
+							state_h_s  <= '1';
+							state_s    <= IDLE;
 						end if;
 					end if;
 
@@ -66,16 +61,16 @@ begin
 
 					if(state_h_s = '1') then
 						data_o <= '1';
-						if (count_s = 90) then
-							count_s   <= (others => '0');
-							state_h_s <= '0';
+						if (count_s = 35) then
+							timer_en_s <= '0';
+							state_h_s  <= '0';
 						end if;
 					else
 						data_o <= '0';
-						if (count_s = 35) then
-							count_s   <= (others => '0');
-							state_h_s <= '1';
-							state_s   <= IDLE;
+						if (count_s = 90) then
+							timer_en_s <= '0';
+							state_h_s  <= '1';
+							state_s    <= IDLE;
 						end if;
 					end if;
 
@@ -83,16 +78,23 @@ begin
 					timer_en_s <= '1';
 					state_h_s  <= '1';
 					data_o     <= '0';
-					if (count_s = 125) then
-						count_s <= (others => '0');
+
+					if (count_s = 5000) then
+						timer_en_s <= '0';
+						state_s    <= IDLE;						
 					end if;
 
 				when IDLE =>
 					timer_en_s <= '0';
 					state_h_s  <= '1';
-					data_o     <= '1';
-			end case;
 
+					if (en_i = '1') then
+						state_s <= data_i;
+					end if;
+			end case;
 		end if;
 	end process p_state;
+
+	idle_o <= '1' when state_s = IDLE else '0';
+
 end rtl;
