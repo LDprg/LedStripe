@@ -7,7 +7,7 @@ use work.types.all;
 
 entity LedSequence is
 	port (
-		clk_100M_i : in  std_logic;
+		clk_50M_i : in  std_logic;
 		en_i       : in  std_logic;
 		data_i     : in  LedState;
 		idle_o     : out std_logic;
@@ -19,12 +19,13 @@ architecture rtl of LedSequence is
 	signal state_s   : LedState  := IDLE;
 
 	signal timer_en_s : std_logic := '0';
+	signal data_s : std_logic := '0';
 
 	signal count_s : unsigned(12 downto 0) := (others => '0');
 begin
-	p_clk : process (clk_100M_i)
+	p_clk : process (clk_50M_i)
 	begin
-		if (rising_edge(clk_100M_i) and en_i = '1') then
+		if (rising_edge(clk_50M_i) and en_i = '1') then
 			if (timer_en_s = '1') then
 				count_s <= count_s + 1;
 			else
@@ -33,22 +34,22 @@ begin
 		end if;
 	end process p_clk;
 
-	p_state : process (en_i, clk_100M_i)
+	p_state : process (en_i, clk_50M_i)
 	begin
-		if (rising_edge(clk_100M_i)) then
+		if (rising_edge(clk_50M_i)) then
 			case(state_s) is
 				when '1' =>
 					timer_en_s <= '1';
 
-					if(data_o = '1') then
-						if (count_s = 90) then
+					if(data_s = '1') then
+						if (count_s = 45) then
 							timer_en_s <= '0';
-							data_o  <= '0';
+							data_s  <= '0';
 						end if;
 					else
-						if (count_s = 35) then
+						if (count_s = 18) then
 							timer_en_s <= '0';
-							data_o  <= '1';
+							data_s  <= '1';
 							state_s    <= IDLE;
 						end if;
 					end if;
@@ -56,22 +57,22 @@ begin
 				when '0' =>
 					timer_en_s <= '1';
 
-					if(data_o = '1') then
-						if (count_s = 35) then
+					if(data_s = '1') then
+						if (count_s = 18) then
 							timer_en_s <= '0';
-							data_o  <= '0';
+							data_s  <= '0';
 						end if;
 					else
-						if (count_s = 90) then
+						if (count_s = 45) then
 							timer_en_s <= '0';
-							data_o  <= '1';
+							data_s  <= '1';
 							state_s    <= IDLE;
 						end if;
 					end if;
 
 				when RET =>
 					timer_en_s <= '1';
-					data_o     <= '0';
+					data_s     <= '0';
 
 					if (count_s = 5000) then
 						timer_en_s <= '0';
@@ -90,4 +91,5 @@ begin
 
 	idle_o <= '1' when state_s = IDLE else '0';
 
+	data_o <= data_s;
 end rtl;

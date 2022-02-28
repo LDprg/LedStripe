@@ -1,0 +1,55 @@
+# UCF File
+# Buttons
+#NET "bt_i<0>" LOC = M13 | IOSTANDARD = "LVTTL";
+#NET "bt_i<1>" LOC = M14 | IOSTANDARD = "LVTTL";
+#NET "bt_i<2>" LOC = L13 | IOSTANDARD = "LVTTL";
+#NET "bt_i<3>" LOC = L14 | IOSTANDARD = "LVTTL";
+
+# Switchs
+#NET "sw_i<0>" LOC = F12 | IOSTANDARD = "LVTTL";
+#NET "sw_i<1>" LOC = G12 | IOSTANDARD = "LVTTL";
+#NET "sw_i<2>" LOC = H14 | IOSTANDARD = "LVTTL";
+#NET "sw_i<3>" LOC = H13 | IOSTANDARD = "LVTTL";
+#NET "sw_i<4>" LOC = J14 | IOSTANDARD = "LVTTL";
+#NET "sw_i<5>" LOC = J13 | IOSTANDARD = "LVTTL";
+#NET "sw_i<6>" LOC = K14 | IOSTANDARD = "LVTTL";
+#NET "sw_i<7>" LOC = K13 | IOSTANDARD = "LVTTL";
+
+# Leds
+#NET "led_o<0>" LOC = K12 | IOSTANDARD = "LVTTL";
+#NET "led_o<1>" LOC = P14 | IOSTANDARD = "LVTTL";
+#NET "led_o<2>" LOC = L12 | IOSTANDARD = "LVTTL";
+#NET "led_o<3>" LOC = N14 | IOSTANDARD = "LVTTL";
+#NET "led_o<4>" LOC = P13 | IOSTANDARD = "LVTTL";
+#NET "led_o<5>" LOC = N12 | IOSTANDARD = "LVTTL";
+#NET "led_o<6>" LOC = P12 | IOSTANDARD = "LVTTL";
+#NET "led_o<7>" LOC = P11 | IOSTANDARD = "LVTTL";
+
+# 7 Segment Display data
+#NET "seg_dat_o<0>" LOC = E14 | IOSTANDARD = "LVTTL";
+#NET "seg_dat_o<1>" LOC = G13 | IOSTANDARD = "LVTTL";
+#NET "seg_dat_o<2>" LOC = N15 | IOSTANDARD = "LVTTL";
+#NET "seg_dat_o<3>" LOC = P15 | IOSTANDARD = "LVTTL";
+#NET "seg_dat_o<4>" LOC = R16 | IOSTANDARD = "LVTTL";
+#NET "seg_dat_o<5>" LOC = F13 | IOSTANDARD = "LVTTL";
+#NET "seg_dat_o<6>" LOC = N16 | IOSTANDARD = "LVTTL";
+#NET "seg_dat_o<7>" LOC = P16 | IOSTANDARD = "LVTTL";
+
+# 7 Segment Display data
+#NET "seg_sel_o<0>" LOC = D14 | IOSTANDARD = "LVTTL";
+#NET "seg_sel_o<1>" LOC = G14 | IOSTANDARD = "LVTTL";
+#NET "seg_sel_o<2>" LOC = F14 | IOSTANDARD = "LVTTL";
+#NET "seg_sel_o<3>" LOC = E13 | IOSTANDARD = "LVTTL";
+
+# VGA
+#NET "vga_r_o" LOC = R12 | IOSTANDARD = "LVTTL";
+#NET "vga_g_o" LOC = T12 | IOSTANDARD = "LVTTL";
+#NET "vga_b_o" LOC = R11 | IOSTANDARD = "LVTTL";
+#NET "vga_hs_o" LOC = R9 | IOSTANDARD = "LVTTL";
+#NET "vga_vs_o" LOC = T10 | IOSTANDARD = "LVTTL";
+
+# Clock
+NET "clk_50m_i" LOC = T9 | IOSTANDARD = "LVTTL";
+NET "clk_50m_i" PERIOD = 20;
+
+NET "led_o" LOC = N8 | IOSTANDARD = "LVTTL";

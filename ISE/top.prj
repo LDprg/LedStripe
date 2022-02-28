@@ -1,0 +1,4 @@
+vhdl work "../VHDL/types.vhd"
+vhdl work "../VHDL/LedSequence.vhd"
+vhdl work "../VHDL/LedStripe.vhd"
+vhdl work "../VHDL/top.vhd"

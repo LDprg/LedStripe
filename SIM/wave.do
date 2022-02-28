@@ -1,15 +1,13 @@
 onerror {resume}
 quietly WaveActivateNextPane {} 0
-add wave -noupdate /tb/clk_100M_s
-add wave -noupdate /tb/inst_uart_top/led_o
 add wave -noupdate /tb/inst_uart_top/inst_LedStripe/data_i
 add wave -noupdate -format Literal -radix symbolic /tb/inst_uart_top/inst_LedStripe/inst_LedSequence/state_s
-add wave -noupdate /tb/inst_uart_top/inst_LedStripe/inst_LedSequence/state_h_s
 add wave -noupdate /tb/inst_uart_top/inst_LedStripe/ready_s
 add wave -noupdate -format Literal /tb/inst_uart_top/inst_LedStripe/data_s
 add wave -noupdate /tb/inst_uart_top/inst_LedStripe/inst_LedSequence/timer_en_s
-add wave -noupdate -expand /tb/inst_uart_top/inst_LedStripe/count_led_s
+add wave -noupdate /tb/inst_uart_top/inst_LedStripe/count_led_s
 add wave -noupdate /tb/inst_uart_top/inst_LedStripe/count_s
+add wave -noupdate /tb/inst_uart_top/led_o
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {{Cursor 2} {947165 ns} 0}
 quietly wave cursor active 1

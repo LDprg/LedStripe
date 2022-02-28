@@ -10,7 +10,7 @@ entity LedStripe is
 		leds_g : natural
 	);
 	port (
-		clk_100M_i : in  std_logic;
+		clk_50M_i : in  std_logic;
 		data_i     : in  GRB_vector(leds_g-1 downto 0);
 		led_o      : out std_logic
 	);
@@ -25,31 +25,33 @@ architecture rtl of LedStripe is
 begin
 	inst_LedSequence : entity work.LedSequence
 		port map (
-			clk_100M_i => clk_100M_i,
+			clk_50M_i => clk_50M_i,
 			en_i       => '1',
 			data_i     => data_s,
 			idle_o     => ready_s,
 			data_o     => led_o
 		);
 
-	p_state : process (clk_100M_i)
+	p_state : process (clk_50M_i)
 	begin
-		if (rising_edge(clk_100M_i)) then
+		if (rising_edge(clk_50M_i)) then
 			if (ready_s = '1') then
-				count_s <= count_s + 1;
-
-				if (count_s = 23) then
-					count_s     <= (others => '0');
-					count_led_s <= count_led_s + 1;
-				end if;
-
 				if (count_led_s = leds_g) then
 					count_led_s <= (others => '0');
+					data_s <= RET;
+				else		
+					if (count_s = 23) then
+						count_s     <= (others => '0');
+						count_led_s <= count_led_s + 1;
+					else
+						count_s <= count_s + 1;
+						data_s <= to_LedState(data_i(to_integer(count_led_s))(to_integer(count_s)));
+					end if;
 				end if;
 
 			end if;
 		end if;
 	end process p_state;
 
-	data_s <= RET when count_led_s = leds_g else to_LedState(data_i(to_integer(count_led_s))(to_integer(count_s)));
+	--data_s <= RET when count_led_s = leds_g else to_LedState(data_i(to_integer(count_led_s))(to_integer(count_s)));
 end rtl;
