@@ -36,22 +36,20 @@ begin
 	begin
 		if (rising_edge(clk_50M_i)) then
 			if (ready_s = '1') then
-				if (count_led_s = leds_g) then
-					count_led_s <= (others => '0');
-					data_s <= RET;
-				else		
-					if (count_s = 23) then
-						count_s     <= (others => '0');
-						count_led_s <= count_led_s + 1;
-					else
-						count_s <= count_s + 1;
-						data_s <= to_LedState(data_i(to_integer(count_led_s))(to_integer(count_s)));
-					end if;
+				if (count_s = 23) then
+					count_s     <= (others => '0');
+					count_led_s <= count_led_s + 1;
+				else
+					count_s <= count_s + 1;
 				end if;
 
+				if (count_led_s = leds_g) then
+					count_led_s <= (others => '0');
+					count_s     <= (others => '0');
+				end if;
 			end if;
 		end if;
 	end process p_state;
 
-	--data_s <= RET when count_led_s = leds_g else to_LedState(data_i(to_integer(count_led_s))(to_integer(count_s)));
+	data_s <= RET when count_led_s = leds_g else to_LedState(data_i(to_integer(count_led_s))(to_integer(count_s)));
 end rtl;

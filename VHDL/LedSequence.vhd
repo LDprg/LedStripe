@@ -17,6 +17,7 @@ end LedSequence;
 
 architecture rtl of LedSequence is
 	signal state_s   : LedState  := IDLE;
+	signal state_h_s   : std_logic  := '0';
 
 	signal timer_en_s : std_logic := '0';
 	signal data_s : std_logic := '0';
@@ -41,15 +42,16 @@ begin
 				when '1' =>
 					timer_en_s <= '1';
 
-					if(data_s = '1') then
+					if(state_h_s = '1') then
+						data_s  <= '1';
 						if (count_s = 45) then
 							timer_en_s <= '0';
-							data_s  <= '0';
+							state_h_s <= '0';
 						end if;
 					else
+						data_s  <= '0';
 						if (count_s = 18) then
 							timer_en_s <= '0';
-							data_s  <= '1';
 							state_s    <= IDLE;
 						end if;
 					end if;
@@ -57,15 +59,16 @@ begin
 				when '0' =>
 					timer_en_s <= '1';
 
-					if(data_s = '1') then
+					if(state_h_s = '1') then
+						data_s  <= '1';
 						if (count_s = 18) then
 							timer_en_s <= '0';
-							data_s  <= '0';
+							state_h_s <= '0';
 						end if;
 					else
+						data_s  <= '0';
 						if (count_s = 45) then
 							timer_en_s <= '0';
-							data_s  <= '1';
 							state_s    <= IDLE;
 						end if;
 					end if;
@@ -81,6 +84,7 @@ begin
 
 				when IDLE =>
 					timer_en_s <= '0';
+					state_h_s <= '1';
 
 					if (en_i = '1') then
 						state_s <= data_i;
