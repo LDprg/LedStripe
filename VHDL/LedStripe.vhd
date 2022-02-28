@@ -11,8 +11,8 @@ entity LedStripe is
 	);
 	port (
 		clk_50M_i : in  std_logic;
-		data_i     : in  GRB_vector(leds_g-1 downto 0);
-		led_o      : out std_logic
+		data_i    : in  GRB_vector(leds_g-1 downto 0);
+		led_o     : out std_logic
 	);
 end LedStripe;
 
@@ -26,10 +26,10 @@ begin
 	inst_LedSequence : entity work.LedSequence
 		port map (
 			clk_50M_i => clk_50M_i,
-			en_i       => '1',
-			data_i     => data_s,
-			idle_o     => ready_s,
-			data_o     => led_o
+			en_i      => '1',
+			data_i    => data_s,
+			idle_o    => ready_s,
+			data_o    => led_o
 		);
 
 	p_state : process (clk_50M_i)

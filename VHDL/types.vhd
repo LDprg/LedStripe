@@ -16,7 +16,7 @@ end package types;
 package body types is
 
 	function f_log2 (x : positive) return natural is
-		variable i : natural;
+		variable i         : natural;
 	begin
 		i := 0;
 		while (2**i < x) and i < 31 loop
@@ -28,9 +28,9 @@ package body types is
 	function to_LedState (x : std_logic) return LedState is
 	begin
 		case(x) is
-			when '1' => 
+			when '1' =>
 				return '1';
-			when '0' => 
+			when '0' =>
 				return '0';
 			when others =>
 				return IDLE;

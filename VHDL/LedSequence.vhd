@@ -8,19 +8,19 @@ use work.types.all;
 entity LedSequence is
 	port (
 		clk_50M_i : in  std_logic;
-		en_i       : in  std_logic;
-		data_i     : in  LedState;
-		idle_o     : out std_logic;
-		data_o     : out std_logic
+		en_i      : in  std_logic;
+		data_i    : in  LedState;
+		idle_o    : out std_logic;
+		data_o    : out std_logic
 	);
 end LedSequence;
 
 architecture rtl of LedSequence is
 	signal state_s   : LedState  := IDLE;
-	signal state_h_s   : std_logic  := '0';
+	signal state_h_s : std_logic := '0';
 
 	signal timer_en_s : std_logic := '0';
-	signal data_s : std_logic := '0';
+	signal data_s     : std_logic := '0';
 
 	signal count_s : unsigned(12 downto 0) := (others => '0');
 begin
@@ -43,13 +43,13 @@ begin
 					timer_en_s <= '1';
 
 					if(state_h_s = '1') then
-						data_s  <= '1';
+						data_s <= '1';
 						if (count_s = 45) then
 							timer_en_s <= '0';
-							state_h_s <= '0';
+							state_h_s  <= '0';
 						end if;
 					else
-						data_s  <= '0';
+						data_s <= '0';
 						if (count_s = 18) then
 							timer_en_s <= '0';
 							state_s    <= IDLE;
@@ -60,13 +60,13 @@ begin
 					timer_en_s <= '1';
 
 					if(state_h_s = '1') then
-						data_s  <= '1';
+						data_s <= '1';
 						if (count_s = 18) then
 							timer_en_s <= '0';
-							state_h_s <= '0';
+							state_h_s  <= '0';
 						end if;
 					else
-						data_s  <= '0';
+						data_s <= '0';
 						if (count_s = 45) then
 							timer_en_s <= '0';
 							state_s    <= IDLE;
@@ -79,12 +79,12 @@ begin
 
 					if (count_s = 5000) then
 						timer_en_s <= '0';
-						state_s    <= IDLE;						
+						state_s    <= IDLE;
 					end if;
 
 				when IDLE =>
 					timer_en_s <= '0';
-					state_h_s <= '1';
+					state_h_s  <= '1';
 
 					if (en_i = '1') then
 						state_s <= data_i;

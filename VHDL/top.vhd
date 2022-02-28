@@ -24,4 +24,13 @@ begin
 			data_i    => data_s,
 			led_o     => led_o
 		);
+
+	inst_ModeShift : entity work.ModeShift
+		generic map (
+			leds_g => leds_c
+		)
+		port map (
+			clk_50M_i => clk_50M_i,
+			data_o    => data_s
+		);
 end rtl;
