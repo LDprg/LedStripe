@@ -17,7 +17,10 @@
 <msg type="info" file="Xst" num="1561" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/LedStripe/VHDL/types.vhd</arg>&quot; line <arg fmt="%d" index="2">34</arg>: Mux is complete : default of case is discarded
 </msg>
 
-<msg type="warning" file="Xst" num="1781" delta="old" >Signal &lt;<arg fmt="%s" index="1">data_s</arg>&gt; is used but never assigned. Tied to default value.
+<msg type="warning" file="Xst" num="753" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/LedStripe/VHDL/ModeShift.vhd</arg>&quot; line <arg fmt="%d" index="2">23</arg>: Unconnected output port &apos;<arg fmt="%s" index="3">en_10_o</arg>&apos; of component &apos;<arg fmt="%s" index="4">Prescaler</arg>&apos;.
+</msg>
+
+<msg type="error" file="Xst" num="787" delta="new" >&quot;<arg fmt="%s" index="1">/home/ise/LedStripe/VHDL/ModeShift.vhd</arg>&quot; line <arg fmt="%d" index="2">34</arg>: Index value &lt;<arg fmt="%d" index="3">60</arg>&gt; is not in Range of array &lt;<arg fmt="%s" index="4">data_s</arg>&gt;.
 </msg>
 
 </messages>

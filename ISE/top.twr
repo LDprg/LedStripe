@@ -36,390 +36,440 @@ INFO:Timing:3389 - This architecture does not support 'Discrete Jitter' and
 Timing constraint: NET "clk_50M_i_BUFGP/IBUFG" PERIOD = 20 ns HIGH 50%;
 For more information, see Period Analysis in the Timing Closure User Guide (UG612).
 
- 520 paths analyzed, 132 endpoints analyzed, 0 failing endpoints
+ 12062 paths analyzed, 3460 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
- Minimum period is   6.606ns.
+ Minimum period is  16.636ns.
 --------------------------------------------------------------------------------
 
-Paths for end point inst_LedStripe/inst_LedSequence/state_s_0 (SLICE_X19Y6.F2), 11 paths
+Paths for end point inst_LedStripe/inst_LedSequence/state_s_0 (SLICE_X20Y7.BX), 5190 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     13.394ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               inst_LedStripe/count_led_s_2 (FF)
+Slack (setup path):     3.364ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               inst_LedStripe/count_led_s_3_3 (FF)
   Destination:          inst_LedStripe/inst_LedSequence/state_s_0 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      6.605ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.001ns (0.435 - 0.436)
+  Data Path Delay:      16.634ns (Levels of Logic = 8)
+  Clock Path Skew:      -0.002ns (0.141 - 0.143)
   Source Clock:         clk_50M_i_BUFGP rising at 0.000ns
   Destination Clock:    clk_50M_i_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.000ns
 
-  Maximum Data Path: inst_LedStripe/count_led_s_2 to inst_LedStripe/inst_LedSequence/state_s_0
+  Maximum Data Path: inst_LedStripe/count_led_s_3_3 to inst_LedStripe/inst_LedSequence/state_s_0
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X23Y1.YQ       Tcko                  0.720   inst_LedStripe/count_led_s<3>
-                                                       inst_LedStripe/count_led_s_2
-    SLICE_X22Y1.F3       net (fanout=8)        1.846   inst_LedStripe/count_led_s<2>
-    SLICE_X22Y1.X        Tilo                  0.608   inst_LedStripe/count_led_s<5>
-                                                       inst_LedStripe/data_s<0>4
-    SLICE_X22Y5.F1       net (fanout=1)        0.930   inst_LedStripe/data_s<0>4
-    SLICE_X22Y5.X        Tilo                  0.608   inst_LedStripe/data_s<0>
-                                                       inst_LedStripe/data_s<0>43
-    SLICE_X19Y6.F2       net (fanout=1)        0.900   inst_LedStripe/data_s<0>
-    SLICE_X19Y6.CLK      Tfck                  0.993   inst_LedStripe/inst_LedSequence/state_s<0>
-                                                       inst_LedStripe/inst_LedSequence/Mmux_state_s_mux0000_3
+    SLICE_X20Y20.YQ      Tcko                  0.720   inst_LedStripe/count_led_s_3_3
+                                                       inst_LedStripe/count_led_s_3_3
+    SLICE_X32Y43.BY      net (fanout=36)       5.963   inst_LedStripe/count_led_s_3_3
+    SLICE_X32Y43.Y       Tbyy                  0.649   inst_LedStripe/Mmux__varindex0000_17_f74
+                                                       inst_LedStripe/Mmux__varindex0000_17_f7_3
+    SLICE_X16Y30.F2      net (fanout=2)        2.025   inst_LedStripe/Mmux__varindex0000_17_f74
+    SLICE_X16Y30.X       Tilo                  0.608   N114
+                                                       inst_LedStripe/count_led_s<4>8_SW2
+    SLICE_X14Y28.F1      net (fanout=1)        0.585   N114
+    SLICE_X14Y28.F5      Tif5                  0.796   inst_LedStripe/Mmux__varindex0000_9_f52
+                                                       inst_LedStripe/Mmux__varindex0000_103
+                                                       inst_LedStripe/Mmux__varindex0000_9_f5_1
+    SLICE_X14Y28.FXINA   net (fanout=1)        0.000   inst_LedStripe/Mmux__varindex0000_9_f52
+    SLICE_X14Y28.FX      Tinafx                0.200   inst_LedStripe/Mmux__varindex0000_9_f52
+                                                       inst_LedStripe/Mmux__varindex0000_8_f6_0
+    SLICE_X14Y29.FXINA   net (fanout=1)        0.000   inst_LedStripe/Mmux__varindex0000_8_f61
+    SLICE_X14Y29.FX      Tinafx                0.200   inst_LedStripe/Mmux__varindex0000_10_f51
+                                                       inst_LedStripe/Mmux__varindex0000_7_f7
+    SLICE_X15Y27.FXINB   net (fanout=1)        0.000   inst_LedStripe/Mmux__varindex0000_7_f7
+    SLICE_X15Y27.Y       Tif6y                 0.342   inst_LedStripe/Mmux__varindex0000_5_f8
+                                                       inst_LedStripe/Mmux__varindex0000_5_f8
+    SLICE_X20Y17.G2      net (fanout=1)        1.790   inst_LedStripe/Mmux__varindex0000_5_f8
+    SLICE_X20Y17.Y       Tilo                  0.608   inst_LedStripe/data_s<0>
+                                                       inst_LedStripe/data_s<0>1
+    SLICE_X20Y7.BX       net (fanout=1)        1.445   inst_LedStripe/data_s<0>
+    SLICE_X20Y7.CLK      Tdick                 0.703   inst_LedStripe/inst_LedSequence/state_s<0>
                                                        inst_LedStripe/inst_LedSequence/Mmux_state_s_mux0000_2_f5
                                                        inst_LedStripe/inst_LedSequence/state_s_0
     -------------------------------------------------  ---------------------------
-    Total                                      6.605ns (2.929ns logic, 3.676ns route)
-                                                       (44.3% logic, 55.7% route)
+    Total                                     16.634ns (4.826ns logic, 11.808ns route)
+                                                       (29.0% logic, 71.0% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     14.490ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               inst_LedStripe/count_led_s_6 (FF)
+Slack (setup path):     3.485ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               inst_LedStripe/count_led_s_3_3 (FF)
   Destination:          inst_LedStripe/inst_LedSequence/state_s_0 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      5.509ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.001ns (0.435 - 0.436)
+  Data Path Delay:      16.513ns (Levels of Logic = 8)
+  Clock Path Skew:      -0.002ns (0.141 - 0.143)
   Source Clock:         clk_50M_i_BUFGP rising at 0.000ns
   Destination Clock:    clk_50M_i_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.000ns
 
-  Maximum Data Path: inst_LedStripe/count_led_s_6 to inst_LedStripe/inst_LedSequence/state_s_0
+  Maximum Data Path: inst_LedStripe/count_led_s_3_3 to inst_LedStripe/inst_LedSequence/state_s_0
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X22Y0.XQ       Tcko                  0.720   inst_LedStripe/count_led_s<6>
-                                                       inst_LedStripe/count_led_s_6
-    SLICE_X22Y5.G1       net (fanout=4)        1.665   inst_LedStripe/count_led_s<6>
-    SLICE_X22Y5.Y        Tilo                  0.608   inst_LedStripe/data_s<0>
-                                                       inst_LedStripe/data_s<0>17
-    SLICE_X22Y5.F3       net (fanout=1)        0.015   inst_LedStripe/data_s<0>17/O
-    SLICE_X22Y5.X        Tilo                  0.608   inst_LedStripe/data_s<0>
-                                                       inst_LedStripe/data_s<0>43
-    SLICE_X19Y6.F2       net (fanout=1)        0.900   inst_LedStripe/data_s<0>
-    SLICE_X19Y6.CLK      Tfck                  0.993   inst_LedStripe/inst_LedSequence/state_s<0>
-                                                       inst_LedStripe/inst_LedSequence/Mmux_state_s_mux0000_3
+    SLICE_X20Y20.YQ      Tcko                  0.720   inst_LedStripe/count_led_s_3_3
+                                                       inst_LedStripe/count_led_s_3_3
+    SLICE_X32Y43.BY      net (fanout=36)       5.963   inst_LedStripe/count_led_s_3_3
+    SLICE_X32Y43.Y       Tbyy                  0.649   inst_LedStripe/Mmux__varindex0000_17_f74
+                                                       inst_LedStripe/Mmux__varindex0000_17_f7_3
+    SLICE_X16Y30.G2      net (fanout=2)        2.131   inst_LedStripe/Mmux__varindex0000_17_f74
+    SLICE_X16Y30.Y       Tilo                  0.608   N114
+                                                       inst_LedStripe/count_led_s<4>8_SW1
+    SLICE_X14Y28.F3      net (fanout=1)        0.358   N113
+    SLICE_X14Y28.F5      Tif5                  0.796   inst_LedStripe/Mmux__varindex0000_9_f52
+                                                       inst_LedStripe/Mmux__varindex0000_103
+                                                       inst_LedStripe/Mmux__varindex0000_9_f5_1
+    SLICE_X14Y28.FXINA   net (fanout=1)        0.000   inst_LedStripe/Mmux__varindex0000_9_f52
+    SLICE_X14Y28.FX      Tinafx                0.200   inst_LedStripe/Mmux__varindex0000_9_f52
+                                                       inst_LedStripe/Mmux__varindex0000_8_f6_0
+    SLICE_X14Y29.FXINA   net (fanout=1)        0.000   inst_LedStripe/Mmux__varindex0000_8_f61
+    SLICE_X14Y29.FX      Tinafx                0.200   inst_LedStripe/Mmux__varindex0000_10_f51
+                                                       inst_LedStripe/Mmux__varindex0000_7_f7
+    SLICE_X15Y27.FXINB   net (fanout=1)        0.000   inst_LedStripe/Mmux__varindex0000_7_f7
+    SLICE_X15Y27.Y       Tif6y                 0.342   inst_LedStripe/Mmux__varindex0000_5_f8
+                                                       inst_LedStripe/Mmux__varindex0000_5_f8
+    SLICE_X20Y17.G2      net (fanout=1)        1.790   inst_LedStripe/Mmux__varindex0000_5_f8
+    SLICE_X20Y17.Y       Tilo                  0.608   inst_LedStripe/data_s<0>
+                                                       inst_LedStripe/data_s<0>1
+    SLICE_X20Y7.BX       net (fanout=1)        1.445   inst_LedStripe/data_s<0>
+    SLICE_X20Y7.CLK      Tdick                 0.703   inst_LedStripe/inst_LedSequence/state_s<0>
                                                        inst_LedStripe/inst_LedSequence/Mmux_state_s_mux0000_2_f5
                                                        inst_LedStripe/inst_LedSequence/state_s_0
     -------------------------------------------------  ---------------------------
-    Total                                      5.509ns (2.929ns logic, 2.580ns route)
-                                                       (53.2% logic, 46.8% route)
+    Total                                     16.513ns (4.826ns logic, 11.687ns route)
+                                                       (29.2% logic, 70.8% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     14.529ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               inst_LedStripe/count_led_s_3 (FF)
+Slack (setup path):     4.271ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               inst_LedStripe/count_led_s_1_10 (FF)
   Destination:          inst_LedStripe/inst_LedSequence/state_s_0 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      5.470ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.001ns (0.435 - 0.436)
+  Data Path Delay:      15.729ns (Levels of Logic = 8)
+  Clock Path Skew:      0.000ns
   Source Clock:         clk_50M_i_BUFGP rising at 0.000ns
   Destination Clock:    clk_50M_i_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.000ns
 
-  Maximum Data Path: inst_LedStripe/count_led_s_3 to inst_LedStripe/inst_LedSequence/state_s_0
+  Maximum Data Path: inst_LedStripe/count_led_s_1_10 to inst_LedStripe/inst_LedSequence/state_s_0
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X23Y1.XQ       Tcko                  0.720   inst_LedStripe/count_led_s<3>
-                                                       inst_LedStripe/count_led_s_3
-    SLICE_X22Y1.F1       net (fanout=8)        0.711   inst_LedStripe/count_led_s<3>
-    SLICE_X22Y1.X        Tilo                  0.608   inst_LedStripe/count_led_s<5>
-                                                       inst_LedStripe/data_s<0>4
-    SLICE_X22Y5.F1       net (fanout=1)        0.930   inst_LedStripe/data_s<0>4
-    SLICE_X22Y5.X        Tilo                  0.608   inst_LedStripe/data_s<0>
-                                                       inst_LedStripe/data_s<0>43
-    SLICE_X19Y6.F2       net (fanout=1)        0.900   inst_LedStripe/data_s<0>
-    SLICE_X19Y6.CLK      Tfck                  0.993   inst_LedStripe/inst_LedSequence/state_s<0>
-                                                       inst_LedStripe/inst_LedSequence/Mmux_state_s_mux0000_3
+    SLICE_X33Y38.YQ      Tcko                  0.720   inst_LedStripe/count_led_s_1_10
+                                                       inst_LedStripe/count_led_s_1_10
+    SLICE_X3Y40.BY       net (fanout=15)       4.714   inst_LedStripe/count_led_s_1_10
+    SLICE_X3Y40.Y        Tbyy                  0.649   inst_LedStripe/Mmux__varindex0000_23_f6
+                                                       inst_LedStripe/Mmux__varindex0000_23_f6
+    SLICE_X11Y38.G1      net (fanout=1)        1.574   inst_LedStripe/Mmux__varindex0000_23_f6
+    SLICE_X11Y38.Y       Tilo                  0.551   N35
+                                                       inst_LedStripe/count_led_s<4>7_SW0
+    SLICE_X15Y27.G4      net (fanout=1)        1.494   N37
+    SLICE_X15Y27.F5      Tif5                  0.739   inst_LedStripe/Mmux__varindex0000_5_f8
+                                                       inst_LedStripe/Mmux__varindex0000_12
+                                                       inst_LedStripe/Mmux__varindex0000_10_f5
+    SLICE_X15Y26.FXINB   net (fanout=1)        0.000   inst_LedStripe/Mmux__varindex0000_10_f5
+    SLICE_X15Y26.FX      Tinbfx                0.200   inst_LedStripe/Mmux__varindex0000_9_f51
+                                                       inst_LedStripe/Mmux__varindex0000_8_f6
+    SLICE_X14Y27.FXINB   net (fanout=1)        0.000   inst_LedStripe/Mmux__varindex0000_8_f6
+    SLICE_X14Y27.FX      Tinbfx                0.200   inst_LedStripe/Mmux__varindex0000_9_f5
+                                                       inst_LedStripe/Mmux__varindex0000_6_f7
+    SLICE_X15Y27.FXINA   net (fanout=1)        0.000   inst_LedStripe/Mmux__varindex0000_6_f7
+    SLICE_X15Y27.Y       Tif6y                 0.342   inst_LedStripe/Mmux__varindex0000_5_f8
+                                                       inst_LedStripe/Mmux__varindex0000_5_f8
+    SLICE_X20Y17.G2      net (fanout=1)        1.790   inst_LedStripe/Mmux__varindex0000_5_f8
+    SLICE_X20Y17.Y       Tilo                  0.608   inst_LedStripe/data_s<0>
+                                                       inst_LedStripe/data_s<0>1
+    SLICE_X20Y7.BX       net (fanout=1)        1.445   inst_LedStripe/data_s<0>
+    SLICE_X20Y7.CLK      Tdick                 0.703   inst_LedStripe/inst_LedSequence/state_s<0>
                                                        inst_LedStripe/inst_LedSequence/Mmux_state_s_mux0000_2_f5
                                                        inst_LedStripe/inst_LedSequence/state_s_0
     -------------------------------------------------  ---------------------------
-    Total                                      5.470ns (2.929ns logic, 2.541ns route)
-                                                       (53.5% logic, 46.5% route)
+    Total                                     15.729ns (4.712ns logic, 11.017ns route)
+                                                       (30.0% logic, 70.0% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point inst_LedStripe/inst_LedSequence/state_s_1 (SLICE_X23Y6.G1), 14 paths
+Paths for end point inst_LedStripe/count_led_s_2_46 (SLICE_X7Y46.CE), 8 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     13.670ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               inst_LedStripe/inst_LedSequence/count_s_6 (FF)
-  Destination:          inst_LedStripe/inst_LedSequence/state_s_1 (FF)
+Slack (setup path):     11.734ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               inst_LedStripe/count_s_0 (FF)
+  Destination:          inst_LedStripe/count_led_s_2_46 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      6.330ns (Levels of Logic = 4)
-  Clock Path Skew:      0.000ns
+  Data Path Delay:      8.265ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.001ns (0.436 - 0.437)
   Source Clock:         clk_50M_i_BUFGP rising at 0.000ns
   Destination Clock:    clk_50M_i_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.000ns
 
-  Maximum Data Path: inst_LedStripe/inst_LedSequence/count_s_6 to inst_LedStripe/inst_LedSequence/state_s_1
+  Maximum Data Path: inst_LedStripe/count_s_0 to inst_LedStripe/count_led_s_2_46
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X21Y7.XQ       Tcko                  0.720   inst_LedStripe/inst_LedSequence/count_s<6>
-                                                       inst_LedStripe/inst_LedSequence/count_s_6
-    SLICE_X20Y8.G2       net (fanout=3)        0.682   inst_LedStripe/inst_LedSequence/count_s<6>
-    SLICE_X20Y8.Y        Tilo                  0.608   inst_LedStripe/inst_LedSequence/data_s_mux0000_bdd5
-                                                       inst_LedStripe/inst_LedSequence/data_s_mux00003_SW0
-    SLICE_X20Y8.F4       net (fanout=2)        0.027   N15
-    SLICE_X20Y8.X        Tilo                  0.608   inst_LedStripe/inst_LedSequence/data_s_mux0000_bdd5
-                                                       inst_LedStripe/inst_LedSequence/data_s_mux00003
-    SLICE_X19Y5.BX       net (fanout=6)        1.036   inst_LedStripe/inst_LedSequence/data_s_mux0000_bdd5
-    SLICE_X19Y5.X        Tbxx                  0.621   N31
-                                                       inst_LedStripe/inst_LedSequence/Mmux_state_s_mux0000_41_SW0
-    SLICE_X23Y6.G1       net (fanout=1)        1.035   N31
-    SLICE_X23Y6.CLK      Tgck                  0.993   inst_LedStripe/inst_LedSequence/state_s<1>
-                                                       inst_LedStripe/inst_LedSequence/Mmux_state_s_mux0000_41
-                                                       inst_LedStripe/inst_LedSequence/Mmux_state_s_mux0000_2_f5_0
-                                                       inst_LedStripe/inst_LedSequence/state_s_1
+    SLICE_X18Y18.XQ      Tcko                  0.720   inst_LedStripe/count_s<0>
+                                                       inst_LedStripe/count_s_0
+    SLICE_X19Y18.G1      net (fanout=13)       1.046   inst_LedStripe/count_s<0>
+    SLICE_X19Y18.Y       Tilo                  0.551   inst_LedStripe/N14
+                                                       inst_LedStripe/Mcount_count_s_xor<3>111
+    SLICE_X19Y18.F3      net (fanout=3)        0.028   inst_LedStripe/N6
+    SLICE_X19Y18.X       Tilo                  0.551   inst_LedStripe/N14
+                                                       inst_LedStripe/count_led_s_not000111
+    SLICE_X20Y19.G3      net (fanout=2)        0.372   inst_LedStripe/N14
+    SLICE_X20Y19.Y       Tilo                  0.608   inst_LedStripe/count_led_s_not0001
+                                                       inst_LedStripe/count_led_s_not00012
+    SLICE_X7Y46.CE       net (fanout=119)      3.787   inst_LedStripe/count_led_s_not0001
+    SLICE_X7Y46.CLK      Tceck                 0.602   inst_LedStripe/count_led_s_2_46
+                                                       inst_LedStripe/count_led_s_2_46
     -------------------------------------------------  ---------------------------
-    Total                                      6.330ns (3.550ns logic, 2.780ns route)
-                                                       (56.1% logic, 43.9% route)
+    Total                                      8.265ns (3.032ns logic, 5.233ns route)
+                                                       (36.7% logic, 63.3% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     13.714ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               inst_LedStripe/inst_LedSequence/count_s_10 (FF)
-  Destination:          inst_LedStripe/inst_LedSequence/state_s_1 (FF)
+Slack (setup path):     12.275ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               inst_LedStripe/count_s_1 (FF)
+  Destination:          inst_LedStripe/count_led_s_2_46 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      6.286ns (Levels of Logic = 4)
-  Clock Path Skew:      0.000ns
+  Data Path Delay:      7.724ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.001ns (0.436 - 0.437)
   Source Clock:         clk_50M_i_BUFGP rising at 0.000ns
   Destination Clock:    clk_50M_i_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.000ns
 
-  Maximum Data Path: inst_LedStripe/inst_LedSequence/count_s_10 to inst_LedStripe/inst_LedSequence/state_s_1
+  Maximum Data Path: inst_LedStripe/count_s_1 to inst_LedStripe/count_led_s_2_46
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X21Y9.XQ       Tcko                  0.720   inst_LedStripe/inst_LedSequence/count_s<10>
-                                                       inst_LedStripe/inst_LedSequence/count_s_10
-    SLICE_X20Y8.G1       net (fanout=3)        0.638   inst_LedStripe/inst_LedSequence/count_s<10>
-    SLICE_X20Y8.Y        Tilo                  0.608   inst_LedStripe/inst_LedSequence/data_s_mux0000_bdd5
-                                                       inst_LedStripe/inst_LedSequence/data_s_mux00003_SW0
-    SLICE_X20Y8.F4       net (fanout=2)        0.027   N15
-    SLICE_X20Y8.X        Tilo                  0.608   inst_LedStripe/inst_LedSequence/data_s_mux0000_bdd5
-                                                       inst_LedStripe/inst_LedSequence/data_s_mux00003
-    SLICE_X19Y5.BX       net (fanout=6)        1.036   inst_LedStripe/inst_LedSequence/data_s_mux0000_bdd5
-    SLICE_X19Y5.X        Tbxx                  0.621   N31
-                                                       inst_LedStripe/inst_LedSequence/Mmux_state_s_mux0000_41_SW0
-    SLICE_X23Y6.G1       net (fanout=1)        1.035   N31
-    SLICE_X23Y6.CLK      Tgck                  0.993   inst_LedStripe/inst_LedSequence/state_s<1>
-                                                       inst_LedStripe/inst_LedSequence/Mmux_state_s_mux0000_41
-                                                       inst_LedStripe/inst_LedSequence/Mmux_state_s_mux0000_2_f5_0
-                                                       inst_LedStripe/inst_LedSequence/state_s_1
+    SLICE_X18Y18.YQ      Tcko                  0.720   inst_LedStripe/count_s<0>
+                                                       inst_LedStripe/count_s_1
+    SLICE_X19Y18.G3      net (fanout=8)        0.505   inst_LedStripe/count_s<1>
+    SLICE_X19Y18.Y       Tilo                  0.551   inst_LedStripe/N14
+                                                       inst_LedStripe/Mcount_count_s_xor<3>111
+    SLICE_X19Y18.F3      net (fanout=3)        0.028   inst_LedStripe/N6
+    SLICE_X19Y18.X       Tilo                  0.551   inst_LedStripe/N14
+                                                       inst_LedStripe/count_led_s_not000111
+    SLICE_X20Y19.G3      net (fanout=2)        0.372   inst_LedStripe/N14
+    SLICE_X20Y19.Y       Tilo                  0.608   inst_LedStripe/count_led_s_not0001
+                                                       inst_LedStripe/count_led_s_not00012
+    SLICE_X7Y46.CE       net (fanout=119)      3.787   inst_LedStripe/count_led_s_not0001
+    SLICE_X7Y46.CLK      Tceck                 0.602   inst_LedStripe/count_led_s_2_46
+                                                       inst_LedStripe/count_led_s_2_46
     -------------------------------------------------  ---------------------------
-    Total                                      6.286ns (3.550ns logic, 2.736ns route)
-                                                       (56.5% logic, 43.5% route)
+    Total                                      7.724ns (3.032ns logic, 4.692ns route)
+                                                       (39.3% logic, 60.7% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     13.889ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               inst_LedStripe/inst_LedSequence/count_s_11 (FF)
-  Destination:          inst_LedStripe/inst_LedSequence/state_s_1 (FF)
+Slack (setup path):     12.335ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               inst_LedStripe/count_s_2 (FF)
+  Destination:          inst_LedStripe/count_led_s_2_46 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      6.111ns (Levels of Logic = 4)
-  Clock Path Skew:      0.000ns
+  Data Path Delay:      7.664ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.001ns (0.436 - 0.437)
   Source Clock:         clk_50M_i_BUFGP rising at 0.000ns
   Destination Clock:    clk_50M_i_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.000ns
 
-  Maximum Data Path: inst_LedStripe/inst_LedSequence/count_s_11 to inst_LedStripe/inst_LedSequence/state_s_1
+  Maximum Data Path: inst_LedStripe/count_s_2 to inst_LedStripe/count_led_s_2_46
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X21Y9.YQ       Tcko                  0.720   inst_LedStripe/inst_LedSequence/count_s<10>
-                                                       inst_LedStripe/inst_LedSequence/count_s_11
-    SLICE_X20Y8.G4       net (fanout=3)        0.463   inst_LedStripe/inst_LedSequence/count_s<11>
-    SLICE_X20Y8.Y        Tilo                  0.608   inst_LedStripe/inst_LedSequence/data_s_mux0000_bdd5
-                                                       inst_LedStripe/inst_LedSequence/data_s_mux00003_SW0
-    SLICE_X20Y8.F4       net (fanout=2)        0.027   N15
-    SLICE_X20Y8.X        Tilo                  0.608   inst_LedStripe/inst_LedSequence/data_s_mux0000_bdd5
-                                                       inst_LedStripe/inst_LedSequence/data_s_mux00003
-    SLICE_X19Y5.BX       net (fanout=6)        1.036   inst_LedStripe/inst_LedSequence/data_s_mux0000_bdd5
-    SLICE_X19Y5.X        Tbxx                  0.621   N31
-                                                       inst_LedStripe/inst_LedSequence/Mmux_state_s_mux0000_41_SW0
-    SLICE_X23Y6.G1       net (fanout=1)        1.035   N31
-    SLICE_X23Y6.CLK      Tgck                  0.993   inst_LedStripe/inst_LedSequence/state_s<1>
-                                                       inst_LedStripe/inst_LedSequence/Mmux_state_s_mux0000_41
-                                                       inst_LedStripe/inst_LedSequence/Mmux_state_s_mux0000_2_f5_0
-                                                       inst_LedStripe/inst_LedSequence/state_s_1
+    SLICE_X19Y19.YQ      Tcko                  0.720   inst_LedStripe/count_s<3>
+                                                       inst_LedStripe/count_s_2
+    SLICE_X19Y18.G4      net (fanout=5)        0.445   inst_LedStripe/count_s<2>
+    SLICE_X19Y18.Y       Tilo                  0.551   inst_LedStripe/N14
+                                                       inst_LedStripe/Mcount_count_s_xor<3>111
+    SLICE_X19Y18.F3      net (fanout=3)        0.028   inst_LedStripe/N6
+    SLICE_X19Y18.X       Tilo                  0.551   inst_LedStripe/N14
+                                                       inst_LedStripe/count_led_s_not000111
+    SLICE_X20Y19.G3      net (fanout=2)        0.372   inst_LedStripe/N14
+    SLICE_X20Y19.Y       Tilo                  0.608   inst_LedStripe/count_led_s_not0001
+                                                       inst_LedStripe/count_led_s_not00012
+    SLICE_X7Y46.CE       net (fanout=119)      3.787   inst_LedStripe/count_led_s_not0001
+    SLICE_X7Y46.CLK      Tceck                 0.602   inst_LedStripe/count_led_s_2_46
+                                                       inst_LedStripe/count_led_s_2_46
     -------------------------------------------------  ---------------------------
-    Total                                      6.111ns (3.550ns logic, 2.561ns route)
-                                                       (58.1% logic, 41.9% route)
+    Total                                      7.664ns (3.032ns logic, 4.632ns route)
+                                                       (39.6% logic, 60.4% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point inst_LedStripe/count_s_5 (SLICE_X22Y2.SR), 8 paths
+Paths for end point inst_LedStripe/count_led_s_2_35 (SLICE_X12Y41.CE), 8 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     14.025ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               inst_LedStripe/inst_LedSequence/state_s_0 (FF)
-  Destination:          inst_LedStripe/count_s_5 (FF)
+Slack (setup path):     11.745ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               inst_LedStripe/count_s_0 (FF)
+  Destination:          inst_LedStripe/count_led_s_2_35 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      5.975ns (Levels of Logic = 2)
-  Clock Path Skew:      0.000ns
+  Data Path Delay:      8.254ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.001ns (0.436 - 0.437)
   Source Clock:         clk_50M_i_BUFGP rising at 0.000ns
   Destination Clock:    clk_50M_i_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.000ns
 
-  Maximum Data Path: inst_LedStripe/inst_LedSequence/state_s_0 to inst_LedStripe/count_s_5
+  Maximum Data Path: inst_LedStripe/count_s_0 to inst_LedStripe/count_led_s_2_35
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X19Y6.XQ       Tcko                  0.720   inst_LedStripe/inst_LedSequence/state_s<0>
-                                                       inst_LedStripe/inst_LedSequence/state_s_0
-    SLICE_X23Y2.G2       net (fanout=15)       1.683   inst_LedStripe/inst_LedSequence/state_s<0>
-    SLICE_X23Y2.Y        Tilo                  0.551   inst_LedStripe/count_led_s_not0001
-                                                       inst_LedStripe/inst_LedSequence/idle_o_cmp_eq00001
-    SLICE_X23Y2.F3       net (fanout=5)        0.027   inst_LedStripe/ready_s
-    SLICE_X23Y2.X        Tilo                  0.551   inst_LedStripe/count_led_s_not0001
-                                                       inst_LedStripe/count_led_s_not0001
-    SLICE_X22Y2.SR       net (fanout=9)        1.417   inst_LedStripe/count_led_s_not0001
-    SLICE_X22Y2.CLK      Tsrck                 1.026   inst_LedStripe/count_s<5>
-                                                       inst_LedStripe/count_s_5
+    SLICE_X18Y18.XQ      Tcko                  0.720   inst_LedStripe/count_s<0>
+                                                       inst_LedStripe/count_s_0
+    SLICE_X19Y18.G1      net (fanout=13)       1.046   inst_LedStripe/count_s<0>
+    SLICE_X19Y18.Y       Tilo                  0.551   inst_LedStripe/N14
+                                                       inst_LedStripe/Mcount_count_s_xor<3>111
+    SLICE_X19Y18.F3      net (fanout=3)        0.028   inst_LedStripe/N6
+    SLICE_X19Y18.X       Tilo                  0.551   inst_LedStripe/N14
+                                                       inst_LedStripe/count_led_s_not000111
+    SLICE_X20Y19.G3      net (fanout=2)        0.372   inst_LedStripe/N14
+    SLICE_X20Y19.Y       Tilo                  0.608   inst_LedStripe/count_led_s_not0001
+                                                       inst_LedStripe/count_led_s_not00012
+    SLICE_X12Y41.CE      net (fanout=119)      3.776   inst_LedStripe/count_led_s_not0001
+    SLICE_X12Y41.CLK     Tceck                 0.602   inst_LedStripe/count_led_s_2_35
+                                                       inst_LedStripe/count_led_s_2_35
     -------------------------------------------------  ---------------------------
-    Total                                      5.975ns (2.848ns logic, 3.127ns route)
-                                                       (47.7% logic, 52.3% route)
+    Total                                      8.254ns (3.032ns logic, 5.222ns route)
+                                                       (36.7% logic, 63.3% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     14.624ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               inst_LedStripe/count_s_5 (FF)
-  Destination:          inst_LedStripe/count_s_5 (FF)
+Slack (setup path):     12.286ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               inst_LedStripe/count_s_1 (FF)
+  Destination:          inst_LedStripe/count_led_s_2_35 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      5.376ns (Levels of Logic = 1)
-  Clock Path Skew:      0.000ns
+  Data Path Delay:      7.713ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.001ns (0.436 - 0.437)
   Source Clock:         clk_50M_i_BUFGP rising at 0.000ns
   Destination Clock:    clk_50M_i_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.000ns
 
-  Maximum Data Path: inst_LedStripe/count_s_5 to inst_LedStripe/count_s_5
+  Maximum Data Path: inst_LedStripe/count_s_1 to inst_LedStripe/count_led_s_2_35
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X22Y2.YQ       Tcko                  0.720   inst_LedStripe/count_s<5>
-                                                       inst_LedStripe/count_s_5
-    SLICE_X23Y2.F2       net (fanout=2)        1.662   inst_LedStripe/count_s<5>
-    SLICE_X23Y2.X        Tilo                  0.551   inst_LedStripe/count_led_s_not0001
-                                                       inst_LedStripe/count_led_s_not0001
-    SLICE_X22Y2.SR       net (fanout=9)        1.417   inst_LedStripe/count_led_s_not0001
-    SLICE_X22Y2.CLK      Tsrck                 1.026   inst_LedStripe/count_s<5>
-                                                       inst_LedStripe/count_s_5
+    SLICE_X18Y18.YQ      Tcko                  0.720   inst_LedStripe/count_s<0>
+                                                       inst_LedStripe/count_s_1
+    SLICE_X19Y18.G3      net (fanout=8)        0.505   inst_LedStripe/count_s<1>
+    SLICE_X19Y18.Y       Tilo                  0.551   inst_LedStripe/N14
+                                                       inst_LedStripe/Mcount_count_s_xor<3>111
+    SLICE_X19Y18.F3      net (fanout=3)        0.028   inst_LedStripe/N6
+    SLICE_X19Y18.X       Tilo                  0.551   inst_LedStripe/N14
+                                                       inst_LedStripe/count_led_s_not000111
+    SLICE_X20Y19.G3      net (fanout=2)        0.372   inst_LedStripe/N14
+    SLICE_X20Y19.Y       Tilo                  0.608   inst_LedStripe/count_led_s_not0001
+                                                       inst_LedStripe/count_led_s_not00012
+    SLICE_X12Y41.CE      net (fanout=119)      3.776   inst_LedStripe/count_led_s_not0001
+    SLICE_X12Y41.CLK     Tceck                 0.602   inst_LedStripe/count_led_s_2_35
+                                                       inst_LedStripe/count_led_s_2_35
     -------------------------------------------------  ---------------------------
-    Total                                      5.376ns (2.297ns logic, 3.079ns route)
-                                                       (42.7% logic, 57.3% route)
+    Total                                      7.713ns (3.032ns logic, 4.681ns route)
+                                                       (39.3% logic, 60.7% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     14.822ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               inst_LedStripe/inst_LedSequence/state_s_1 (FF)
-  Destination:          inst_LedStripe/count_s_5 (FF)
+Slack (setup path):     12.346ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               inst_LedStripe/count_s_2 (FF)
+  Destination:          inst_LedStripe/count_led_s_2_35 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      5.178ns (Levels of Logic = 2)
-  Clock Path Skew:      0.000ns
+  Data Path Delay:      7.653ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.001ns (0.436 - 0.437)
   Source Clock:         clk_50M_i_BUFGP rising at 0.000ns
   Destination Clock:    clk_50M_i_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.000ns
 
-  Maximum Data Path: inst_LedStripe/inst_LedSequence/state_s_1 to inst_LedStripe/count_s_5
+  Maximum Data Path: inst_LedStripe/count_s_2 to inst_LedStripe/count_led_s_2_35
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X23Y6.XQ       Tcko                  0.720   inst_LedStripe/inst_LedSequence/state_s<1>
-                                                       inst_LedStripe/inst_LedSequence/state_s_1
-    SLICE_X23Y2.G3       net (fanout=13)       0.886   inst_LedStripe/inst_LedSequence/state_s<1>
-    SLICE_X23Y2.Y        Tilo                  0.551   inst_LedStripe/count_led_s_not0001
-                                                       inst_LedStripe/inst_LedSequence/idle_o_cmp_eq00001
-    SLICE_X23Y2.F3       net (fanout=5)        0.027   inst_LedStripe/ready_s
-    SLICE_X23Y2.X        Tilo                  0.551   inst_LedStripe/count_led_s_not0001
-                                                       inst_LedStripe/count_led_s_not0001
-    SLICE_X22Y2.SR       net (fanout=9)        1.417   inst_LedStripe/count_led_s_not0001
-    SLICE_X22Y2.CLK      Tsrck                 1.026   inst_LedStripe/count_s<5>
-                                                       inst_LedStripe/count_s_5
+    SLICE_X19Y19.YQ      Tcko                  0.720   inst_LedStripe/count_s<3>
+                                                       inst_LedStripe/count_s_2
+    SLICE_X19Y18.G4      net (fanout=5)        0.445   inst_LedStripe/count_s<2>
+    SLICE_X19Y18.Y       Tilo                  0.551   inst_LedStripe/N14
+                                                       inst_LedStripe/Mcount_count_s_xor<3>111
+    SLICE_X19Y18.F3      net (fanout=3)        0.028   inst_LedStripe/N6
+    SLICE_X19Y18.X       Tilo                  0.551   inst_LedStripe/N14
+                                                       inst_LedStripe/count_led_s_not000111
+    SLICE_X20Y19.G3      net (fanout=2)        0.372   inst_LedStripe/N14
+    SLICE_X20Y19.Y       Tilo                  0.608   inst_LedStripe/count_led_s_not0001
+                                                       inst_LedStripe/count_led_s_not00012
+    SLICE_X12Y41.CE      net (fanout=119)      3.776   inst_LedStripe/count_led_s_not0001
+    SLICE_X12Y41.CLK     Tceck                 0.602   inst_LedStripe/count_led_s_2_35
+                                                       inst_LedStripe/count_led_s_2_35
     -------------------------------------------------  ---------------------------
-    Total                                      5.178ns (2.848ns logic, 2.330ns route)
-                                                       (55.0% logic, 45.0% route)
+    Total                                      7.653ns (3.032ns logic, 4.621ns route)
+                                                       (39.6% logic, 60.4% route)
 
 --------------------------------------------------------------------------------
 
 Hold Paths: NET "clk_50M_i_BUFGP/IBUFG" PERIOD = 20 ns HIGH 50%;
 --------------------------------------------------------------------------------
 
-Paths for end point inst_LedStripe/count_s_0 (SLICE_X24Y2.BX), 1 path
+Paths for end point inst_ModeShift/data_s_30_13 (SLICE_X3Y15.BX), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.824ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               inst_LedStripe/count_s_0 (FF)
-  Destination:          inst_LedStripe/count_s_0 (FF)
+Slack (hold path):      0.797ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               inst_ModeShift/data_s_31_13 (FF)
+  Destination:          inst_ModeShift/data_s_30_13 (FF)
   Requirement:          0.000ns
-  Data Path Delay:      0.824ns (Levels of Logic = 0)
-  Clock Path Skew:      0.000ns
+  Data Path Delay:      0.798ns (Levels of Logic = 0)
+  Clock Path Skew:      0.001ns (0.003 - 0.002)
   Source Clock:         clk_50M_i_BUFGP rising at 20.000ns
   Destination Clock:    clk_50M_i_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path: inst_LedStripe/count_s_0 to inst_LedStripe/count_s_0
+  Minimum Data Path: inst_ModeShift/data_s_31_13 to inst_ModeShift/data_s_30_13
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X24Y2.XQ       Tcko                  0.576   inst_LedStripe/count_s<0>
-                                                       inst_LedStripe/count_s_0
-    SLICE_X24Y2.BX       net (fanout=6)        0.531   inst_LedStripe/count_s<0>
-    SLICE_X24Y2.CLK      Tckdi       (-Th)     0.283   inst_LedStripe/count_s<0>
-                                                       inst_LedStripe/count_s_0
+    SLICE_X3Y12.XQ       Tcko                  0.576   inst_ModeShift/data_s_31_13
+                                                       inst_ModeShift/data_s_31_13
+    SLICE_X3Y15.BX       net (fanout=2)        0.505   inst_ModeShift/data_s_31_13
+    SLICE_X3Y15.CLK      Tckdi       (-Th)     0.283   inst_ModeShift/data_s_30_13
+                                                       inst_ModeShift/data_s_30_13
     -------------------------------------------------  ---------------------------
-    Total                                      0.824ns (0.293ns logic, 0.531ns route)
-                                                       (35.6% logic, 64.4% route)
+    Total                                      0.798ns (0.293ns logic, 0.505ns route)
+                                                       (36.7% logic, 63.3% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point inst_LedStripe/count_led_s_0 (SLICE_X24Y0.BX), 1 path
+Paths for end point inst_ModeShift/data_s_32_19 (SLICE_X35Y13.BX), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.917ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               inst_LedStripe/count_led_s_0 (FF)
-  Destination:          inst_LedStripe/count_led_s_0 (FF)
+Slack (hold path):      0.797ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               inst_ModeShift/data_s_33_19 (FF)
+  Destination:          inst_ModeShift/data_s_32_19 (FF)
   Requirement:          0.000ns
-  Data Path Delay:      0.917ns (Levels of Logic = 0)
-  Clock Path Skew:      0.000ns
+  Data Path Delay:      0.798ns (Levels of Logic = 0)
+  Clock Path Skew:      0.001ns (0.002 - 0.001)
   Source Clock:         clk_50M_i_BUFGP rising at 20.000ns
   Destination Clock:    clk_50M_i_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path: inst_LedStripe/count_led_s_0 to inst_LedStripe/count_led_s_0
+  Minimum Data Path: inst_ModeShift/data_s_33_19 to inst_ModeShift/data_s_32_19
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X24Y0.XQ       Tcko                  0.576   inst_LedStripe/count_led_s<0>
-                                                       inst_LedStripe/count_led_s_0
-    SLICE_X24Y0.BX       net (fanout=8)        0.624   inst_LedStripe/count_led_s<0>
-    SLICE_X24Y0.CLK      Tckdi       (-Th)     0.283   inst_LedStripe/count_led_s<0>
-                                                       inst_LedStripe/count_led_s_0
+    SLICE_X35Y11.XQ      Tcko                  0.576   inst_ModeShift/data_s_33_19
+                                                       inst_ModeShift/data_s_33_19
+    SLICE_X35Y13.BX      net (fanout=2)        0.505   inst_ModeShift/data_s_33_19
+    SLICE_X35Y13.CLK     Tckdi       (-Th)     0.283   inst_ModeShift/data_s_32_19
+                                                       inst_ModeShift/data_s_32_19
     -------------------------------------------------  ---------------------------
-    Total                                      0.917ns (0.293ns logic, 0.624ns route)
-                                                       (32.0% logic, 68.0% route)
+    Total                                      0.798ns (0.293ns logic, 0.505ns route)
+                                                       (36.7% logic, 63.3% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point inst_LedStripe/count_s_3 (SLICE_X23Y3.F4), 1 path
+Paths for end point inst_ModeShift/data_s_27_19 (SLICE_X37Y18.BX), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.973ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               inst_LedStripe/count_s_3 (FF)
-  Destination:          inst_LedStripe/count_s_3 (FF)
+Slack (hold path):      0.797ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               inst_ModeShift/data_s_28_19 (FF)
+  Destination:          inst_ModeShift/data_s_27_19 (FF)
   Requirement:          0.000ns
-  Data Path Delay:      0.973ns (Levels of Logic = 1)
-  Clock Path Skew:      0.000ns
+  Data Path Delay:      0.798ns (Levels of Logic = 0)
+  Clock Path Skew:      0.001ns (0.004 - 0.003)
   Source Clock:         clk_50M_i_BUFGP rising at 20.000ns
   Destination Clock:    clk_50M_i_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path: inst_LedStripe/count_s_3 to inst_LedStripe/count_s_3
+  Minimum Data Path: inst_ModeShift/data_s_28_19 to inst_ModeShift/data_s_27_19
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X23Y3.XQ       Tcko                  0.576   inst_LedStripe/count_s<3>
-                                                       inst_LedStripe/count_s_3
-    SLICE_X23Y3.F4       net (fanout=4)        0.336   inst_LedStripe/count_s<3>
-    SLICE_X23Y3.CLK      Tckf        (-Th)    -0.061   inst_LedStripe/count_s<3>
-                                                       inst_LedStripe/Mcount_count_s_xor<3>11
-                                                       inst_LedStripe/count_s_3
+    SLICE_X37Y17.XQ      Tcko                  0.576   inst_ModeShift/data_s_28_19
+                                                       inst_ModeShift/data_s_28_19
+    SLICE_X37Y18.BX      net (fanout=2)        0.505   inst_ModeShift/data_s_28_19
+    SLICE_X37Y18.CLK     Tckdi       (-Th)     0.283   inst_ModeShift/data_s_27_19
+                                                       inst_ModeShift/data_s_27_19
     -------------------------------------------------  ---------------------------
-    Total                                      0.973ns (0.637ns logic, 0.336ns route)
-                                                       (65.5% logic, 34.5% route)
+    Total                                      0.798ns (0.293ns logic, 0.505ns route)
+                                                       (36.7% logic, 63.3% route)
 
 --------------------------------------------------------------------------------
 
@@ -429,27 +479,27 @@ Slack: 18.428ns (period - (min low pulse limit / (low pulse / period)))
   Period: 20.000ns
   Low pulse: 10.000ns
   Low pulse limit: 0.786ns (Tcl)
-  Physical resource: inst_LedStripe/inst_LedSequence/data_s/CLK
-  Logical resource: inst_LedStripe/inst_LedSequence/data_s/CK
-  Location pin: SLICE_X18Y6.CLK
+  Physical resource: inst_ModeShift/inst_Prescaler/count_1_s<0>/CLK
+  Logical resource: inst_ModeShift/inst_Prescaler/count_1_s_0/CK
+  Location pin: SLICE_X38Y0.CLK
   Clock network: clk_50M_i_BUFGP
 --------------------------------------------------------------------------------
 Slack: 18.428ns (period - (min high pulse limit / (high pulse / period)))
   Period: 20.000ns
   High pulse: 10.000ns
   High pulse limit: 0.786ns (Tch)
-  Physical resource: inst_LedStripe/inst_LedSequence/data_s/CLK
-  Logical resource: inst_LedStripe/inst_LedSequence/data_s/CK
-  Location pin: SLICE_X18Y6.CLK
+  Physical resource: inst_ModeShift/inst_Prescaler/count_1_s<0>/CLK
+  Logical resource: inst_ModeShift/inst_Prescaler/count_1_s_0/CK
+  Location pin: SLICE_X38Y0.CLK
   Clock network: clk_50M_i_BUFGP
 --------------------------------------------------------------------------------
 Slack: 18.428ns (period - (min low pulse limit / (low pulse / period)))
   Period: 20.000ns
   Low pulse: 10.000ns
   Low pulse limit: 0.786ns (Tcl)
-  Physical resource: inst_LedStripe/inst_LedSequence/timer_en_s/CLK
-  Logical resource: inst_LedStripe/inst_LedSequence/timer_en_s/CK
-  Location pin: SLICE_X20Y5.CLK
+  Physical resource: inst_ModeShift/inst_Prescaler/count_1_s<0>/CLK
+  Logical resource: inst_ModeShift/inst_Prescaler/count_1_s_1/CK
+  Location pin: SLICE_X38Y0.CLK
   Clock network: clk_50M_i_BUFGP
 --------------------------------------------------------------------------------
 
@@ -466,7 +516,7 @@ Clock to Setup on destination clock clk_50M_i
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk_50M_i      |    6.606|         |         |         |
+clk_50M_i      |   16.636|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
@@ -475,23 +525,23 @@ Timing summary:
 
 Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
 
-Constraints cover 520 paths, 0 nets, and 272 connections
+Constraints cover 12062 paths, 0 nets, and 7346 connections
 
 Design statistics:
-   Minimum period:   6.606ns{1}   (Maximum frequency: 151.378MHz)
+   Minimum period:  16.636ns{1}   (Maximum frequency:  60.111MHz)
 
 
 ------------------------------------Footnotes-----------------------------------
 1)  The minimum period statistic assumes all single cycle delays.
 
-Analysis completed Sun Feb 27 19:56:42 2022 
+Analysis completed Mon Feb 28 19:08:20 2022 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 322 MB
+Peak Memory Usage: 345 MB
 
 
 

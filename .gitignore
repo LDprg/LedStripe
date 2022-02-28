@@ -6,3 +6,5 @@ transcript
 *.opt
 *.wlf
 *.bak
+
+ISE/top*

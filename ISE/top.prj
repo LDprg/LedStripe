@@ -1,4 +1,6 @@
 vhdl work "../VHDL/types.vhd"
+vhdl work "../VHDL/Prescaler.vhd"
 vhdl work "../VHDL/LedSequence.vhd"
+vhdl work "../VHDL/ModeShift.vhd"
 vhdl work "../VHDL/LedStripe.vhd"
 vhdl work "../VHDL/top.vhd"

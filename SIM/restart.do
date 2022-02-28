@@ -1,3 +1,3 @@
 do com.do
 restart -force
-run 10ms
+run 1000ms

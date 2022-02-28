@@ -1,4 +1,6 @@
 vhdl work "/home/ise/LedStripe/VHDL/types.vhd"
+vhdl work "/home/ise/LedStripe/VHDL/Prescaler.vhd"
 vhdl work "/home/ise/LedStripe/VHDL/LedSequence.vhd"
+vhdl work "/home/ise/LedStripe/VHDL/ModeShift.vhd"
 vhdl work "/home/ise/LedStripe/VHDL/LedStripe.vhd"
 vhdl work "/home/ise/LedStripe/VHDL/top.vhd"
