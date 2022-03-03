@@ -1,8 +1,0 @@
-INTSTYLE=ise
-INFILE=/home/ise/LedStripe/ISE/top.ncd
-OUTFILE=/home/ise/LedStripe/ISE/top.bit
-FAMILY=Spartan3
-PART=xc3s200-4ft256
-WORKINGDIR=/home/ise/LedStripe/ISE
-LICENSE=WebPack
-USER_INFO=8416_11442_1478797146_620

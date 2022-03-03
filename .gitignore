@@ -8,3 +8,10 @@ transcript
 *.bak
 
 ISE/top*
+
+*.mcs
+*.prm
+*.sig
+*.cfi
+
+*.log

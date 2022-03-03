@@ -2,9 +2,6 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-library work;
-use work.types.all;
-
 entity Prescaler is
 	port (
 		clk_50M_i : in  std_logic;

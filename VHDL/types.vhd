@@ -3,8 +3,15 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 package types is
-	subtype GRB is std_logic_vector(23 downto 0);
-	type GRB_vector is Array(natural range <>) of GRB;
+	subtype RGB is std_logic_vector(23 downto 0);
+	type RGB_vector is Array(natural range <>) of RGB;
+
+	constant WHITE_RGB : RGB := (others => '1');
+	constant BLACK_RGB : RGB := (others => '0');
+
+	constant RED_RGB : RGB := x"FF0000";	
+	constant GREEN_RGB : RGB := x"00FF00";
+	constant BLUE_RGB : RGB := x"0000FF";	
 
 	type LedState is ('0', '1', RET, IDLE);
 

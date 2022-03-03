@@ -13,7 +13,7 @@ end top;
 
 architecture rtl of top is
 	constant leds_c : natural                       := 60;
-	signal data_s   : GRB_vector(leds_c-1 downto 0) := (3 => (others => '0'),others => (others => '1'));
+	signal data_s   : RGB_vector(leds_c-1 downto 0);
 begin
 	inst_LedStripe : entity work.LedStripe
 		generic map (
